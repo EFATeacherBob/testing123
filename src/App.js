@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
+import Logout from './components/Logout/Logout'
+
 
 function App() {
+
+  const [sessionToken, setSessionToken] = useState(undefined);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+      <NavBar />
+      <Logout />
+        </nav>
+      <p>This is a test of React.</p>
+      {sessionToken}
     </div>
   );
 }
 
 export default App;
+
+// let [first, second, third] = ['Fellowship of the Ring', 'Two Towers', 'Return of the King']
+// console.log(first)
+// console.log(second)
+// console.log(third)
+
+// let planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+// let [first,,third,...others] = planets;
+// console.log(first)
+// console.log(third)
+// console.log(others)
